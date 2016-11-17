@@ -8,8 +8,8 @@
 |:--:|:--:|:--:|
 |body|text||
 |image|string|
-|group_id|integer|references|
-|user_id|integer|references|
+|group_id|references|foreign_key: true|
+|user_id|references|foreign_key: true|
 
 #### association
 
@@ -28,6 +28,7 @@
 
 - has_many :messages
 - has_many :groups, through: groups_users
+- has_many :groups_users
 
 
 
@@ -36,20 +37,21 @@
 |column|type|option|
 |:--:|:--:|:--:|
 |name|text|null: false, add_index| 
-|user_id|integer|references|
+|user_id|references|foreign_key: true|
 
 #### association
 
 - has_many :users
 - has_many :messages, through:groups_users
+- has_nany :groups_users
 
 
 ### groups_users
 
 |column|type|option|
 |:--:|:--:|:--:|
-|user_id|string|refernces|
-|group_id|string|refernces|
+|user_id|refernces|foreign_key: true|
+|group_id|refernces|foreign_key: true|
 
 #### association
 - belongs_to :group
