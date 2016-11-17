@@ -20,7 +20,7 @@
 
 |column|type|option|
 |:--:|:--:|:--:|
-|name|text|unique: true|
+|name|text|unique: true, add_index|
 |email|string|unique: true|
 |password|string|null: false|
 
@@ -35,7 +35,7 @@
 
 |column|type|option|
 |:--:|:--:|:--:|
-|name|text|null: false| 
+|name|text|null: false, add_index| 
 |user_id|integer|references|
 
 #### association
@@ -52,8 +52,8 @@
 |group_id|string|refernces|
 
 #### association
-- belongs_to :message
-- belongs_tp :user
+- belongs_to :group
+- belongs_to :user
 
 
 
