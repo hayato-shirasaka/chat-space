@@ -43,7 +43,7 @@
 
 - has_many :users
 - has_many :messages, through:groups_users
-- has_nany :groups_users
+- has_many :groups_users
 
 
 ### groups_users
