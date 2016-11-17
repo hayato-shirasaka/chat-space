@@ -11,37 +11,49 @@
 |group_id|integer|references|
 |user_id|integer|references|
 
-#### relations
+#### association
 
-- belongs_to :users
-- belongs_to :groups
+- belongs_to :user
+- belongs_to :group
 
 ### users
 
 |column|type|option|
 |:--:|:--:|:--:|
 |name|text|unique: true|
-|user_id|string|
 |email|string|unique: true|
 |password|string|null: false|
 
-#### relations
+#### association
 
 - has_many :messages
-- has_many :groups
+- has_many :groups, through: groups_users
+
 
 
 ### groups
 
 |column|type|option|
 |:--:|:--:|:--:|
-|name|text|null: false|
+|name|text|null: false| 
 |user_id|integer|references|
 
-#### relations
+#### association
 
-- belongs_to :users
-- has_many :messages
+- has_many :users
+- has_many :messages, through:groups_users
+- 
+
+### groups_users
+
+|column|type|option|
+|:--:|:--:|:--:|
+|user_id|string|refernces|
+|group_id|string|refernces|
+
+#### association
+- belongs_to :message
+- belongs_tp :user
 
 
 
