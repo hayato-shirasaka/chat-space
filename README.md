@@ -1,24 +1,48 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# -the database of chat-space
 
-Things you may want to cover:
+## tables
+### messages
 
-* Ruby version
+|column|type|option|
+|:--:|:--:|:--:|
+|body|text||
+|image|string|
+|group_id|integer|references|
+|user_id|integer|references|
 
-* System dependencies
+#### relations
 
-* Configuration
+- belongs_to :users
+- belongs_to :groups
 
-* Database creation
+### users
 
-* Database initialization
+|column|type|option|
+|:--:|:--:|:--:|
+|name|text|unique: true|
+|user_id|string|
+|email|string|unique: true|
+|password|string|null: false|
 
-* How to run the test suite
+#### relations
 
-* Services (job queues, cache servers, search engines, etc.)
+- has_many :messages
+- has_many :groups
 
-* Deployment instructions
 
-* ...
+### groups
+
+|column|type|option|
+|:--:|:--:|:--:|
+|name|text|null: false|
+|user_id|integer|references|
+
+#### relations
+
+- belongs_to :users
+- has_many :messages
+
+
+
+
