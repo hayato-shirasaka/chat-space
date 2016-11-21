@@ -12,7 +12,7 @@
     background-color: #38aef0;
   }
   .chat-side {
-    width: 15%;
+    width: 200px;
     display: inline-block;
     float: left;
     .chat__user {
@@ -55,7 +55,7 @@
   }
   .chat-main {
     width: 85%;
-    float: right;
+    float: left;
     .chat-header {
       height: 96px;
       padding:0 40px;
@@ -78,7 +78,7 @@
         width: 100px;
         float: right;
         padding: 28px 0;
-        .chat-header__edit-btn {
+        .button {
           padding: 0 20px;
           border: 2px solid;
           line-height: 40px;
@@ -144,7 +144,7 @@
           float: right;
         }
       }
-      .send-button {
+      .button {
         background-color: #38AEF0;
         float: right;
         height: 50px;
