@@ -1,26 +1,35 @@
-.layout-notice 
-    %p チャットグループが作成されました
+/ .layout_notice
+/     チャットグループが作成されました
 
- .chat
-   .chat-side
-     .chat-user clearfix
-       .chat-user__actions
-     .cagt-groups
-       .chat-group__link
-         .chat-group__name
-         .chat-group__message
-   .chat-main
-     .chat-header clearfix
-       .chat-header__left
-         .chat-header__users
-           .chat-header__users
-       .chat-header__right
-         .chat-header__edt-btn
-     .chat-body
-       .chat-messages
-     .chat-foter
-       .new_message
-         .chat-fooer__body
-           .chat-footer__file
-             .fa fa-image
-         .submit    
+.chat
+  .chat__side
+    .chat__user 
+      %p hayato shirasaka
+      .chat__user__actions
+        %i.fa.fa-pencil-square-o
+        %i.fa.fa-cog
+
+    .chat__groups
+      .chat__group
+        .chat__group__name
+          %p1 haml,sass
+        .chat__group__message
+          %p2 difficult
+      .chat__group
+        .chat__gruoup__name
+          %p1 chat-space
+        .chat__group__message
+          %p2 expert cource
+      .chat__group
+        .chat__group__name
+          %p1 停滞中
+        .chat__group__message
+          %p2 急がねば  
+
+
+  .chat__main
+    .chat__header
+      .chat__header__right
+      .chat__header__left
+    .chat__body
+    .chat__footer
