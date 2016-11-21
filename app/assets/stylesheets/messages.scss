@@ -1,88 +1,49 @@
-.layout_notice {
-  height: 40px;
-  background-color: #38AEF0;
-  color: #FFFFFF;
-  text-align: center;
-}
-
-
-html,body {
-  height:100%;
-}
-
-.chat{
-  @include clearfix();
-  width: 100%;
-  height: 100%;
-  min-width: 980px;
-  
-
-
-
-  &__side {
-    float: left;
-    background-color: #2f3e51;
+.chat {
+  margin: 0;
+  padding: 0;
+  .layout-notice{
+    height: 30px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    color: #fff;
+    display: block;
+    font-weight: 200px;
+    text-align: center;
+    background-color: #38aef0;
+  }
+  .chat-side {
     width: 15%;
-    min-width: 260px;
-    height: 100%;
-    padding: 0 20px 0;
-
-      &__user {
-      @include clearfix();
-      height: 100px;
-      width: 260px;
+    display: inline-block;
+    float: left;
+    .chat__user {
       background-color: #253141;
-      padding: 0 20px 0;
-      margin-left: -20px;
-    }
-
+      height: 96px;
+      padding: 35px 20px;
+      box-sizing: border-box;
       p {
-       float: left;
-       color: white;
-       font-size: 16px;
-       height: 96px;
-       font-weight: bold;
-       letter-spacing: 2px;
+        line-height: 16px;
+        color: #FFFFFF;
+        font-weight: bold;
+        display: inline-block;
       }
-
-        &__actions {
+      i.icon-cog {
         float: right;
-        height: 96px;
-       }
-
-        i {
-          color: white;
-          line-height: 96px;
-          font-size: 20px;
-          letter-spacing: 5px;
-        }
-
-      &__groups {
-        background-color: #2f3e51;
-        padding: 20px 0 40px;
-        color: white;
-
       }
-        &__group {
-          padding: 20 0 40px;
-        }
-
-          p1 {
-            font-size: 15px;
-            color: #FFFFFF;
-            margin-bottom: 5px;
-          }
-
-          p2 {
-            font-size: 11px;
-            color: #FFFFFF;
-            margin-bottom: 5px;
-          }
-  }
-  &__main {
-    float: right;
-  }
-    &__header{
-
+      i.icon-edit {
+        float: right;
+      }
     }
+    .chat__group-name {
+      height: 500px;
+      clear: both;
+      background-color: #2f3e51;
+      padding: 20px 20px 0;
+      background-size: border-box;
+      .user-name {
+        font-size: 11px;
+        color: #FFFFFF;
+        padding-bottom:40px;
+      }
+    }
+  }
 }
