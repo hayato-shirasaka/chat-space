@@ -1,7 +1,7 @@
 .chat {
   margin: 0;
   padding: 0;
-  min-width: 1440px;
+  min-width: 980px;
   .layout-notice{
     height: 30px;
     line-height: 30px;
@@ -13,7 +13,7 @@
     background-color: #38aef0;
   }
   .chat-side {
-    width: 200px;
+    width: 300px;
     display: inline-block;
     float: left;
     .chat__user {
@@ -55,7 +55,7 @@
     }
   }
   .chat-main {
-    width: 1240px;
+    width: calc(100% - 300px);
     float: left;
     .chat-header {
       height: 96px;
