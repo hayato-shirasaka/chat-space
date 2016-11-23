@@ -57,7 +57,7 @@ GEM
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
-    devise-i18n-views (0.3.7)
+    devise-i18n (1.1.1)
     erb2haml (0.1.5)
       html2haml
     erubis (2.7.0)
@@ -107,7 +107,7 @@ GEM
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
-    puma (3.6.0)
+    puma (3.6.2)
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -190,7 +190,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise
-  devise-i18n-views
+  devise-i18n
   erb2haml
   font-awesome-rails
   haml-rails
