@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
     if @group.save
     redirect_to controller: :messages, action: :index
   else
-    redirect_to controller: :groups, action: :new
+    render action: :new
   end
   end
 
