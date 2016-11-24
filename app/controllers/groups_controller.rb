@@ -6,15 +6,17 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(create_params)
     if @group.save
-    redirect_to controller: :messages, action: :index
-  else
+    redirect_to root_path
+    else
     render action: :new
-  end
+    
+    end
+
   end
 
   private
   def create_params
-  params.require(:chat_group).permit(:name, :user_id)
+  params.require(:chat_group).permit({user_id:[]}, :name)
   end
 
 end
