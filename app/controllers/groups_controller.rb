@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
     else
       render action: :new
     end
-  end    
+  end
 
   private
   def group_params
