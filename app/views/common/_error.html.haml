@@ -1,0 +1,6 @@
+-if error.any?
+  .chat-group-form__errors
+    %h2= "#{error.count} error prohibited this chat_group from being saved:"
+    %ul
+      -error.full_messages.each do |msg|
+        %li= msg
