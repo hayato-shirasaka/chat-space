@@ -3,7 +3,8 @@
     .chat__user
       %p shirasaka
       %i.fa.fa-cog.icon-cog
-      %a.fa.fa-edit.icon-edit(href = "groups/new")
+      = link_to (new_group_path) do
+        %i.fa.fa-edit.icon-edit
     .chat__group-name
       .user-name shirasaka
       .user-text 先が遠い
