@@ -2,21 +2,20 @@ class GroupsController < ApplicationController
   def new
     @group = Group.new
   end
-  
-  def create
-    @group = Group.new(create_params)
-    if @group.save
-    redirect_to root_path
-    else
-    render action: :new
-    
-    end
 
+  def create
+    # binding.pry
+    @group = Group.create(group_params)
+    if @group.save
+      redirect_to root_path
+    else
+      render action: :new
+    end
   end
 
   private
-  def create_params
-  params.require(:chat_group).permit({user_id:[]}, :name)
+  def group_params
+    params.require(:group).permit(:name, user_id: [])
   end
 
 end
