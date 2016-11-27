@@ -15,5 +15,7 @@
         #user-search-result
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        =f.submit "Save", class:"chat-group-form__action-btn", disable_with: 'Save'
+      .chat-group-form__field--right
+        = f.submit :Save, name:'commit', value: 'Save', class: 'chat-group-form__action-btn', disable_with: 'Save'
+
 
