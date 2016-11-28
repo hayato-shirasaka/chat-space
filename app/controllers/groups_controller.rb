@@ -9,8 +9,9 @@ class GroupsController < ApplicationController
     # binding.pry
     @group = Group.create(group_params)
     if @group.save
-      redirect_to root_path
+      redirect_to root_path , notice: "チャットグループが作成されました"
     else
+      flash.now[:alert] = "チャットグループは作成されていません"
       render action: :new
     end
   end
