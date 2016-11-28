@@ -22,6 +22,7 @@ class GroupsController < ApplicationController
     if @group.update(group_params)
       redirect_to root_path , notice: "チャットグループが更新されました"
     else
+      flash.now[:alert] = "チャットグループが更新されませんでした"
       render action: :edit
     end
   end
