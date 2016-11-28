@@ -13,7 +13,7 @@
       .chat-group-form__field--right
         .chat-group-form__search.clearfix
           = f.collection_check_boxes(:user_ids, User.all, :id, :name) do |b|
-            = b.label {b.check_box + b.text}
+            = b.label { b.check_box + b.text }
     .chat-group-form__field.clearfix
       .chat-group-form__field--right
         = f.submit :Save, name:'commit', value: 'Save', class: 'chat-group-form__action-btn', disable_with: 'Save'

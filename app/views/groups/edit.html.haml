@@ -1,6 +1,6 @@
 .chat-group-form
   %h1 チャットグループ編集
-  = form_for @group, html: {class: "edit_chat_group", id:"edit_chat_group"} do |f|
+  = form_for @group, html: {class: "edit_chat_group", id: "edit_chat_group"} do |f|
     = render partial: "common/error", locals: {error: @group.errors }
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
