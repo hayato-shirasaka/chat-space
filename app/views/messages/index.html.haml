@@ -21,8 +21,8 @@
       .message-time 2016/11/21
       .message-text i see
     .chat__message--input
-      = form_for @message do |f|
+      = form_for [@group, @message] do |f|
         .message-body
-          = f.text_feild :body, placeholder: "メッセージを入力してください"
-          %i.fa.fa-icon.photo
-        = f.submit "Send",class: "send-button"
+          = f.text_field :body, placeholder: "メッセージを入力してください", class: "message-type" do
+            %i.fa.fa-icon.photo
+        = f.submit "Send", class: "send-button" 
