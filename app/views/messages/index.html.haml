@@ -1,7 +1,7 @@
 .chat
   .chat-side
     .chat__user
-      %p shirasaka
+      %p= current_user.name
       = link_to edit_user_registration_path do
         %i.fa.fa-cog.icon-cog
       = link_to new_group_path do
@@ -21,8 +21,8 @@
       .message-time 2016/11/21
       .message-text i see
     .chat__message--input
-      .message-body
-        .message-type メッセージを入力してください
-        %i.fa.fa-photo.icon-photo
-      .button
-        %p Send
+      = form_for @message do |f|
+        .message-body
+          = f.text_feild :body, placeholder: "メッセージを入力してください"
+          %i.fa.fa-icon.photo
+        = f.submit "Send",class: "send-button"
