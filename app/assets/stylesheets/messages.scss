@@ -139,20 +139,23 @@
           padding: 17px 0;
           box-sizing: border-box;
           float: left;
+          height: 50px;
+          width: 90%;
+          border: none;
         }
-        i.icon-photo {
+        i.icon.photo {
           margin: 17px 10px 17px 0;
           float: right;
         }
       }
-      .button {
+      .send-button {
         background-color: #38AEF0;
         float: right;
         height: 50px;
         width: 100px;
         margin-left: 15px;
         color: white;
-        box-sizing: border-box;
+        border: none;
         p {
           line-height: 16px;
           padding: 17px;
