@@ -1,0 +1,11 @@
+.chat
+  .chat-side
+    .chat__user
+      %p= current_user.name
+      = link_to edit_user_registration_path do
+        %i.fa.fa-cog.icon-cog
+      = link_to new_group_path do
+        %i.fa.fa-edit.icon-edit
+    .chat__group-name
+      .user-name shirasaka
+      .user-text 先が遠い
