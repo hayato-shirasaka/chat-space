@@ -6,28 +6,34 @@
         %i.fa.fa-cog.icon-cog
       = link_to new_group_path do
         %i.fa.fa-edit.icon-edit
-    .chat__group-name
-      .user-name shirasaka
-      .user-text 先が遠い
+    .chat__groups
+      -  current_user.groups.each do |group|
+        .group-name= group.name
+        .group-text
   .chat-main
     .chat-header
       .chat-header--left
-        %p sample group
-        .group-members hayato shirasaka
-      .chat-header--right
-        .button Edit
-    .chat__message--display
-    - @group.messages.each do |message|
-      .message-user 
+        %p= @group.name
+        .group-members 
+        Members:
         - @group.users.each do |user|
           = user.name
-      .message-time 
-        = message.created_at
-      .message-text
-        = message.body
-    .chat__message--input
-      = form_for [@group, @message] do |f|
-        .message-body
-          = f.text_field :body, placeholder: "メッセージを入力してください", class: "message-type" do
-            %i.fa.fa-icon.photo
-        = f.submit "Send", class: "send-button" 
+      .chat-header--right
+        =link_to edit_group_path(@group) do
+          .button Edit
+    .chat__message--display
+      .messages
+      - @group.messages.each do |message|
+        .message-user 
+          - @group.users.each do |user|
+            = user.name
+        .message-time 
+          = message.created_at
+        .message-text
+          = message.body
+      .chat__message--input
+        = form_for [@group, @message] do |f|
+          .message-body
+            = f.text_field :body, placeholder: "メッセージを入力してください", class: "message-type" do
+              %i.fa.fa-icon.photo
+          = f.submit "Send", class: "send-button" 
