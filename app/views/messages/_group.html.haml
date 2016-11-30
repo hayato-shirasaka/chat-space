@@ -1,0 +1,6 @@
+.chat-header--left
+  %p= @group.name
+  .group-members 
+  Members:
+  - @group.users.each do |user|
+    = user.name
