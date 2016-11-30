@@ -17,7 +17,7 @@
         =link_to edit_group_path(@group) do
           .button Edit
     .chat__message--display
-      = render partial: 'message', collrction: @messages
+      = render @group.messages
       .chat__message--input
         = form_for [@group, @message] do |f|
           .message-body
