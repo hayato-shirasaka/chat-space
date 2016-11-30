@@ -17,9 +17,14 @@
       .chat-header--right
         .button Edit
     .chat__message--display
-      .message-user shirasaka
-      .message-time 2016/11/21
-      .message-text i see
+    - @group.messages.each do |message|
+      .message-user 
+        - @group.users.each do |user|
+          = user.name
+      .message-time 
+        = message.created_at
+      .message-text
+        = message.body
     .chat__message--input
       = form_for [@group, @message] do |f|
         .message-body
