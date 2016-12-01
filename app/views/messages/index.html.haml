@@ -8,8 +8,9 @@
         %i.fa.fa-edit.icon-edit
     .chat__groups
       -  current_user.groups.each do |group|
-        .group-name= group.name
-        .group-text
+        = link_to group_messages_path(group) do
+          .group-name= group.name
+          .group-text
   .chat-main
     .chat-header
       = render partial: 'group', collrction: @groups
@@ -17,7 +18,7 @@
         =link_to edit_group_path(@group) do
           .button Edit
     .chat__message--display
-      = render @group.messages
+      = render partial: 'message', collrction: @messages
       .chat__message--input
         = form_for [@group, @message] do |f|
           .message-body
