@@ -171,6 +171,7 @@
         background-color: #ddd;
 
         .message-body{
+          position: relative;
           background-color: #fff;
           width: 80%;
           min-width: 485px;
@@ -191,9 +192,11 @@
             border: none;
           }
 
-          i.icon.photo {
+          i.fa.fa-image{
+            position: relative;
             margin: 17px 10px 17px 0;
             float: right;
+            right: 50px;
           }
         }
 

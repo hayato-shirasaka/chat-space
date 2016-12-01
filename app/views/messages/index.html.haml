@@ -23,6 +23,6 @@
       .chat__message--input
         = form_for [@group, @message] do |f|
           .message-body
-            = f.text_field :body, placeholder: "メッセージを入力してください", class: "message-type" do
-              %i.fa.fa-icon.photo
+            = f.text_field :body, placeholder: "メッセージを入力してください", class: "message-type" 
+          %i.fa.fa-image
           = f.submit "Send", class: "send-button" 
