@@ -16,6 +16,7 @@
 
   .chat-side {
     width: 300px;
+    height: 100%;
     display: inline-block;
     float: left;
 
@@ -44,7 +45,8 @@
     }
 
     .chat__groups {
-      height: 500px;
+      margin: 0;
+      padding: 0;
       clear: both;
       background-color: #2f3e51;
       padding: 20px 20px 0;
@@ -77,6 +79,7 @@
   .chat-main {
     width: calc(100% - 300px);
     float: left;
+    height: 100%;
 
     .chat-header {
       height: 96px;
@@ -158,6 +161,9 @@
       }
 
       .chat__message--input {
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
         height: 90px;
         padding: 20px 40px;
         overflow: hidden;
