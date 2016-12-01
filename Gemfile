@@ -55,7 +55,6 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'pry-rails'
 gem 'rails-i18n'
-gem 'rspec-rails', "~> 3.1.0"
 
 group :test do
   gem 'faker'
