@@ -9,8 +9,9 @@
     .chat__groups
       -  current_user.groups.each do |group|
         = link_to group_messages_path(group) do
-          .group-name= group.name
-          .group-text
+          .group-link
+            .group-name= group.name
+            .group-text
   .chat-main
     .chat-header
       = render partial: 'group', collrction: @groups
