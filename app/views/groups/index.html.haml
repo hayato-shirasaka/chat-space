@@ -8,5 +8,7 @@
         %i.fa.fa-edit.icon-edit
     .chat__groups
       -  current_user.groups.each do |group|
-        .group-name= group.name
-        .group-text
+        = link_to group_messages_path(group) do
+          .group-link
+            .group-name= group.name
+            .group-text
