@@ -58,4 +58,5 @@ gem 'rails-i18n'
 
 group :test do
   gem 'faker'
+  gem 'rails-controller-testing'
 end
