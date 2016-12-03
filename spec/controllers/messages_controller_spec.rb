@@ -1,26 +1,37 @@
 require 'rails_helper'
 
-before do
-  @user = create(:user)
+describe MessagesController do
 
-  sign_in @user
+  before do
+    @user = create(:user)
+    @group = create(:group)
+
+    sign_in @user
+  end
+
+  after do
+    sign_out @user
+  end
+
+  describe 'GET #index' do
+    it "renders the :index template" do
+      get :index, group_id: @group.id
+      expect(response).to render_template :index
+    end
+  end
+
+  describe 'POST #create' do
+    it "saves success" do
+      get :index, group_id: @group.id
+      expect {
+        post :create, group_id: @group.id, message: attributes_for(:message)
+      }.to change(Message, :count).by(1)
+    end
+
+
+    it "redirects to messages#index" do
+      post :create, group_id: @group.id, message: attributes_for(:message)
+      expect(response).to redirect_to group_messages_path
+    end
+  end
 end
-
-after do
-  sign_out @user
-end
-
-# describe MessagesController do
-#   describe 'GET #index' do
-#     it "assigns the requested contact to @message" do
-#       message = create(:message)
-#       get :index, id: message
-#       expext(assigns(:message)).to eq message
-#     end
-
-#     it "renders the :index template" do
-#     end
-#   end
-
-
-# end
