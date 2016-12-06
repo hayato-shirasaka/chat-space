@@ -1,4 +1,4 @@
-require 'rails_helper'
+ require 'rails_helper'
 
 describe MessagesController do
 
@@ -14,9 +14,16 @@ describe MessagesController do
   end
 
   describe 'GET #index' do
+
     it "renders the :index template" do
       get :index, group_id: @group.id
       expect(response).to render_template :index
+    end
+
+    it "assigns the requested contact @messages" do
+      messages = create_list(:message, 3)
+      get :index, group_id: @group.id
+      expect(assigns(:messages)).to match(messages)
     end
   end
 
@@ -26,6 +33,13 @@ describe MessagesController do
       expect {
         post :create, group_id: @group.id, message: attributes_for(:message)
       }.to change(Message, :count).by(1)
+    end
+
+    it "saves failure" do
+      get :index, group_id: @group.id
+      expect {
+        post :create, group_id: @group.id, message: attributes_for(:message, body: "")
+      }.not_to change(Message, :count)
     end
 
 
