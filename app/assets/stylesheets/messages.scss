@@ -71,7 +71,7 @@
       .group-text {
         font-size: 11px;
         color: #FFF;
-        padding-bottom: 40px;
+        padding-bottom: 30px;
       }
     }
   }
@@ -85,13 +85,14 @@
       height: 96px;
       padding:0 40px;
       box-sizing: border-box;
+      border-bottom: 1px solid #eee;
 
       .chat-header--left {
         display: inline-block;
 
         p {
           float:left;
-          margin-top: 35px;
+          margin-top: 20px;
           margin-bottom: 15px;
           font-size: 20px;
         }
@@ -121,11 +122,12 @@
     }
 
     .chat__message--display {
-      height: 410px;
+      position: relative;
       background-color: #FAFAFA;
       padding: 46px 40px 0px 40px;
       border-top: #eee;
       box-sizing: border-box;
+      overflow: scroll;
 
       .messages {
         position: absolute;
@@ -160,59 +162,59 @@
         }
       }
 
-      .chat__message--input {
-        bottom: 0px;
-        right: 0px;
-        left: 0px;
-        height: 90px;
-        padding: 20px 40px;
-        overflow: hidden;
+    .chat__message--input {
+      bottom: 0px;
+      right: 0px;
+      left: 0px;
+      height: 90px;
+      padding: 20px 40px;
+      overflow: hidden;
+      box-sizing: border-box;
+      background-color: #ddd;
+
+      .message-body{
+        position: relative;
+        background-color: #fff;
+        width: 80%;
+        min-width: 485px;
+        height: 50px;
+        padding: 0 10px;
+        display: inline-block;
         box-sizing: border-box;
-        background-color: #ddd;
 
-        .message-body{
-          position: relative;
-          background-color: #fff;
-          width: 80%;
-          min-width: 485px;
-          height: 50px;
-          padding: 0 10px;
-          display: inline-block;
+        .message-type {
+          font-size: 16px;
+          line-height: 16px;
+          color: #434A54;
+          padding: 17px 0;
           box-sizing: border-box;
-
-          .message-type {
-            font-size: 16px;
-            line-height: 16px;
-            color: #434A54;
-            padding: 17px 0;
-            box-sizing: border-box;
-            float: left;
-            height: 50px;
-            width: 90%;
-            border: none;
-          }
-
-          i.fa.fa-image{
-            position: relative;
-            margin: 17px 10px 17px 0;
-            float: right;
-            right: 50px;
-          }
+          float: left;
+          height: 50px;
+          width: 90%;
+          border: none;
         }
 
-        .send-button {
-          background-color: #38AEF0;
+        i.fa.fa-image{
+          position: relative;
+          margin: 17px 10px 17px 0;
           float: right;
-          height: 50px;
-          width: 100px;
-          margin-left: 15px;
-          color: white;
-          border: none;
+          right: 50px;
+        }
+      }
 
-          p {
-            line-height: 16px;
-            padding: 17px;
-            text-align: center;
+      .send-button {
+        background-color: #38AEF0;
+        float: right;
+        height: 50px;
+        width: 100px;
+        margin-left: 15px;
+        color: white;
+        border: none;
+
+        p {
+          line-height: 16px;
+          padding: 17px;
+          text-align: center;
           }
         }
       }
