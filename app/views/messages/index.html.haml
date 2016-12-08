@@ -12,6 +12,10 @@
           .group-link
             .group-name= group.name
             .group-text
+              - if last_message = group.messages.last
+                = last_message.body
+              - else
+                まだメッセージはありません
   .chat-main
     .chat-header
       = render partial: 'group', collrction: @groups
@@ -20,9 +24,9 @@
           .button Edit
     .chat__message--display
       = render partial: 'message', collrction: @messages
-      .chat__message--input
-        = form_for [@group, @message] do |f|
-          .message-body
-            = f.text_field :body, placeholder: "メッセージを入力してください", class: "message-type" 
-          %i.fa.fa-image
-          = f.submit "Send", class: "send-button" 
+    .chat__message--input
+      = form_for [@group, @message] do |f|
+        .message-body
+          = f.text_field :body, placeholder: "メッセージを入力してください", class: "message-type" 
+        %i.fa.fa-image
+        = f.submit "Send", class: "send-button" 
