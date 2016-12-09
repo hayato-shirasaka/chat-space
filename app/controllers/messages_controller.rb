@@ -12,12 +12,7 @@ class MessagesController < ApplicationController
     if @message.save
       respond_to do |format|
         format.html { redirect_to group_messages_path}
-        format.json { render json: {
-                                    name: current_user.name,
-                                    body: @message.body,
-                                    created_at: @message.created_at,
-                                    }
-                                  }
+        format.json
       end
     else
       redirect_to group_messages_path, alert: "メッセージを入力してください"
