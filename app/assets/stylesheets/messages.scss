@@ -7,11 +7,11 @@
     height: 30px;
     line-height: 30px;
     letter-spacing: 1px;
-    color: #fff;
+    color: $white-plane;
     display: block;
     font-weight: 200;
     text-align: center;
-    background-color: #38aef0;
+    background-color: $blue-light;
   }
 
   .chat-side {
@@ -28,19 +28,19 @@
 
       p {
         line-height: 16px;
-        color: #FFF;
+        color: $white-plane;
         font-weight: bold;
         display: inline-block;
       }
 
       i.icon-cog {
         float: right;
-        color: #FFF;
+        color: $white-plane;
       }
 
       i.icon-edit {
         float: right;
-        color: #FFF;
+        color: $white-plane;
       }
     }
 
@@ -54,7 +54,7 @@
 
       .group-link {
         display: block;
-        color: #FFF;
+        color: $white-plane;
 
         &:hover {
           background-color: #384a62;
@@ -64,13 +64,13 @@
       .group-name {
         display: inline-block;
         font-size: 15px;
-        color: #FFF;
+        color: $white-plane;
         padding-bottom:5px;
       }
 
       .group-text {
         font-size: 11px;
-        color: #FFF;
+        color: $white-plane;
         padding-bottom: 30px;
       }
     }
@@ -100,7 +100,7 @@
         .group-members {
           clear: both;
           font-size: 12px;
-          color: #999;
+          color: $gray-thin;
         }
       }
 
@@ -114,7 +114,7 @@
           border: 2px solid;
           line-height: 40px;
           font-size: 14px;
-          color: #38aef0;
+          color: $blue-light;
           height: 40px;
           float: right;
         }
@@ -140,14 +140,14 @@
         .message-user {
           font-size: 16px;
           font-weight: bold;
-          color: #434A54;
+          color: black-normal;
           line-height: 10px;
           float: left;
         }
 
         .message-time {
           font-size: 12px;
-          color: #999;
+          color: $gray-thin;
           float: left;
           margin-left: 10px;
           line-height: 10px;
@@ -155,7 +155,7 @@
 
         .message-text {
           font-size: 14px;
-          color: #999;
+          color: $gray-thin;
           clear: both;
           padding-top: 10px;
           padding-bottom: 40px;
@@ -174,7 +174,7 @@
 
       .message-body{
         position: relative;
-        background-color: #fff;
+        background-color: $white-plane;
         width: 80%;
         min-width: 485px;
         height: 50px;
@@ -185,7 +185,7 @@
         .message-type {
           font-size: 16px;
           line-height: 16px;
-          color: #434A54;
+          color: black-normal;
           padding: 17px 0;
           box-sizing: border-box;
           float: left;
@@ -203,7 +203,7 @@
       }
 
       .send-button {
-        background-color: #38AEF0;
+        background-color: $blue-light;
         float: right;
         height: 50px;
         width: 100px;
