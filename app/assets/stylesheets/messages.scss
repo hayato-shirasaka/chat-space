@@ -7,11 +7,11 @@
     height: 30px;
     line-height: 30px;
     letter-spacing: 1px;
-    color: #fff;
+    color: $white-plane;
     display: block;
     font-weight: 200;
     text-align: center;
-    background-color: #38aef0;
+    background-color: $blue-light;
   }
 
   .chat-side {
@@ -28,19 +28,19 @@
 
       p {
         line-height: 16px;
-        color: #FFF;
+        color: $white-plane;
         font-weight: bold;
         display: inline-block;
       }
 
       i.icon-cog {
         float: right;
-        color: #FFF;
+        color: $white-plane;
       }
 
       i.icon-edit {
         float: right;
-        color: #FFF;
+        color: $white-plane;
       }
     }
 
@@ -54,7 +54,7 @@
 
       .group-link {
         display: block;
-        color: #FFF;
+        color: $white-plane;
 
         &:hover {
           background-color: #384a62;
@@ -64,14 +64,14 @@
       .group-name {
         display: inline-block;
         font-size: 15px;
-        color: #FFF;
+        color: $white-plane;
         padding-bottom:5px;
       }
 
       .group-text {
         font-size: 11px;
-        color: #FFF;
-        padding-bottom: 40px;
+        color: $white-plane;
+        padding-bottom: 30px;
       }
     }
   }
@@ -85,13 +85,14 @@
       height: 96px;
       padding:0 40px;
       box-sizing: border-box;
+      border-bottom: 1px solid #eee;
 
       .chat-header--left {
         display: inline-block;
 
         p {
           float:left;
-          margin-top: 35px;
+          margin-top: 20px;
           margin-bottom: 15px;
           font-size: 20px;
         }
@@ -99,7 +100,7 @@
         .group-members {
           clear: both;
           font-size: 12px;
-          color: #999;
+          color: $gray-thin;
         }
       }
 
@@ -113,7 +114,7 @@
           border: 2px solid;
           line-height: 40px;
           font-size: 14px;
-          color: #38aef0;
+          color: $blue-light;
           height: 40px;
           float: right;
         }
@@ -121,11 +122,12 @@
     }
 
     .chat__message--display {
-      height: 410px;
+      position: relative;
       background-color: #FAFAFA;
       padding: 46px 40px 0px 40px;
       border-top: #eee;
       box-sizing: border-box;
+      overflow: scroll;
 
       .messages {
         position: absolute;
@@ -138,14 +140,14 @@
         .message-user {
           font-size: 16px;
           font-weight: bold;
-          color: #434A54;
+          color: black-normal;
           line-height: 10px;
           float: left;
         }
 
         .message-time {
           font-size: 12px;
-          color: #999;
+          color: $gray-thin;
           float: left;
           margin-left: 10px;
           line-height: 10px;
@@ -153,66 +155,66 @@
 
         .message-text {
           font-size: 14px;
-          color: #999;
+          color: $gray-thin;
           clear: both;
           padding-top: 10px;
           padding-bottom: 40px;
         }
       }
 
-      .chat__message--input {
-        bottom: 0px;
-        right: 0px;
-        left: 0px;
-        height: 90px;
-        padding: 20px 40px;
-        overflow: hidden;
+    .chat__message--input {
+      bottom: 0px;
+      right: 0px;
+      left: 0px;
+      height: 90px;
+      padding: 20px 40px;
+      overflow: hidden;
+      box-sizing: border-box;
+      background-color: #ddd;
+
+      .message-body{
+        position: relative;
+        background-color: $white-plane;
+        width: 80%;
+        min-width: 485px;
+        height: 50px;
+        padding: 0 10px;
+        display: inline-block;
         box-sizing: border-box;
-        background-color: #ddd;
 
-        .message-body{
-          position: relative;
-          background-color: #fff;
-          width: 80%;
-          min-width: 485px;
-          height: 50px;
-          padding: 0 10px;
-          display: inline-block;
+        .message-type {
+          font-size: 16px;
+          line-height: 16px;
+          color: black-normal;
+          padding: 17px 0;
           box-sizing: border-box;
-
-          .message-type {
-            font-size: 16px;
-            line-height: 16px;
-            color: #434A54;
-            padding: 17px 0;
-            box-sizing: border-box;
-            float: left;
-            height: 50px;
-            width: 90%;
-            border: none;
-          }
-
-          i.fa.fa-image{
-            position: relative;
-            margin: 17px 10px 17px 0;
-            float: right;
-            right: 50px;
-          }
+          float: left;
+          height: 50px;
+          width: 90%;
+          border: none;
         }
 
-        .send-button {
-          background-color: #38AEF0;
+        i.fa.fa-image{
+          position: relative;
+          margin: 17px 10px 17px 0;
           float: right;
-          height: 50px;
-          width: 100px;
-          margin-left: 15px;
-          color: white;
-          border: none;
+          right: 50px;
+        }
+      }
 
-          p {
-            line-height: 16px;
-            padding: 17px;
-            text-align: center;
+      .send-button {
+        background-color: $blue-light;
+        float: right;
+        height: 50px;
+        width: 100px;
+        margin-left: 15px;
+        color: white;
+        border: none;
+
+        p {
+          line-height: 16px;
+          padding: 17px;
+          text-align: center;
           }
         }
       }
