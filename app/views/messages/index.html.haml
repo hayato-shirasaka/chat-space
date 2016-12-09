@@ -11,11 +11,7 @@
         = link_to group_messages_path(group) do
           .group-link
             .group-name= group.name
-            .group-text
-              - if last_message = group.messages.last
-                = last_message.body
-              - else
-                まだメッセージはありません
+            .group-text= group.show_message
   .chat-main
     .chat-header
       = render partial: 'group', collrction: @groups
