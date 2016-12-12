@@ -20,11 +20,11 @@ $(function() {
     function addUser(data){
       var html =
       '<div class="chat-group-user clearfix">' +
-      '<p class="chat-group-user__name">'+
-      data.name +
-      '</p>' +
-      '<a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="' + data.id + '" data-user-name="' + data.name + '">追加'+
-      '</a>' +
+        '<p class="chat-group-user__name">'+
+          data.name +
+        '</p>' +
+        '<a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="' + data.id + '" data-user-name="' + data.name + '">追加'+
+        '</a>' +
       '</div>';
       $("#user-search-result").append(html);
     }
@@ -51,12 +51,12 @@ $(function() {
     function addUserInfo(id, name){
       var appendedHtml =
       '<div class="chat-group-user">'+
-      '<input name="group[user_ids][]" type="hidden"' + 'value=' + id + '>'+
-      '<p class="chat-group-user__name">'+
-      name +
-      '</p>' +
-      '<a class="user-search-remove ' + 'chat-group-user__btn chat-group-user__btn--remove"' + 'data-user-id=' + id + '>削除' +
-      '</a>'+
+        '<input name="group[user_ids][]" type="hidden"' + 'value=' + id + '>'+
+        '<p class="chat-group-user__name">'+
+          name +
+        '</p>' +
+        '<a class="user-search-remove ' + 'chat-group-user__btn chat-group-user__btn--remove"' + 'data-user-id=' + id + '>削除' +
+        '</a>'+
       '</div>';
       $("#chat-group-users").append(appendedHtml);
     }
@@ -64,6 +64,6 @@ $(function() {
   // ユーザー削除機能
     $("#chat-group-users").on('click','.chat-group-user',function(){
       $(this).remove();
-      })
+    })
   });
 });
