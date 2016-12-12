@@ -7,7 +7,6 @@ html{
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
-    height: 568px;
 
     h1 {
       letter-spacing: 2px;
@@ -74,9 +73,11 @@ html{
         float: right;
         width: 70%;
 
+
         #chat-group-users{
           border-bottom: 1px solid #ddd;
           height: 50px;
+
         }
       }
 
@@ -100,8 +101,15 @@ html{
       padding: 0 15px;
       line-height: 50px;
       font-size: 14px;
+      display: block;
+      clear: both;
+
 
       .chat-group-user__name {
+        float: left;
+      }
+
+      .chat-group-add-user__name {
         float: left;
       }
 
