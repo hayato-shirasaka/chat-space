@@ -57,4 +57,6 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'pry-rails'
 gem 'rails-i18n'
+gem 'carrierwave'
+gem 'rmagick'
 
