@@ -6,3 +6,4 @@
     = message.created_at
   .message-text
     = message.body
+    = image_tag message.image if message.image?
