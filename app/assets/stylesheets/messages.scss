@@ -1,6 +1,7 @@
 .chat {
   margin: 0;
   padding: 0;
+  height: 100%;
   min-width: 980px;
 
   .layout-notice{
@@ -45,6 +46,8 @@
     }
 
     .chat__groups {
+      height:calc(100% - 100px) ;
+      overflow-y: auto;
       margin: 0;
       padding: 0;
       clear: both;
@@ -79,6 +82,7 @@
   .chat-main {
     width: calc(100% - 300px);
     float: left;
+    position: relative;
     height: 100%;
 
     .chat-header {
@@ -123,11 +127,13 @@
 
     .chat__message--display {
       position: relative;
+      height:calc(100% - 190px);
       background-color: #FAFAFA;
       padding: 46px 40px 0px 40px;
       border-top: #eee;
       box-sizing: border-box;
-      overflow: scroll;
+      overflow-y: auto;
+      transform: translateZ(0);
 
       .messages {
         position: absolute;
