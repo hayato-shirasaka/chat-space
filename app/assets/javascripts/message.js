@@ -21,18 +21,39 @@ $(function() {
     return false
   });
     function addHTML(data) {
-    message =
-      "<div class = 'message-display'>" +
-        "<div class = 'message-user'>"  +
-          data.name                     +
-        "</div>"                        +
-        "<div class = 'message-time'>"  +
-          data.created_at               +
-        "</div>"                        +
-        "<div class = 'message-text'>"  +
-          data.body                     +
-        "</div>"                        +
+      // console.log(data.image.image.url)
+    if(data.image.image.url !=null){
+      message =
+      '<div class = "message-display">'    +
+        '<div class = "message-user">'     +
+          data.name                        +
+        '</div>'                           +
+        '<div class = "message-time">'     +
+          data.created_at                  +
+        '</div>'                           +
+        '<div class = "message-text">'     +
+          data.body                        +
+          '<br>'                           +
+          '<img src = "'                   +
+          data.image.image.url             +
+          '">'                             +
+        '</div>'                           +
+      '</div>';
+      return message;
+    }else{
+      message =
+      '<div class = "message-display">'    +
+        '<div class = "message-user">'     +
+          data.name                        +
+        '</div>'                           +
+        '<div class = "message-time">'     +
+          data.created_at                  +
+        '</div>'                           +
+        '<div class = "message-text">'     +
+          data.body                        +
+        "</div>"                           +
       "</div>";
       return message;
+    }
   }
-  });
+});
