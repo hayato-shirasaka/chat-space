@@ -21,7 +21,6 @@ $(function() {
     return false
   });
     function addHTML(data) {
-      // console.log(data.image.image.url)
     if(data.image.image.url !=null){
       message =
       '<div class = "message-display">'    +
