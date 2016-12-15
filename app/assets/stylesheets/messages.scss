@@ -160,6 +160,11 @@
           padding-top: 10px;
           padding-bottom: 40px;
         }
+
+        img{
+          max-height: 300px;
+          max-width: 300px;
+        }
       }
 
     .chat__message--input {
