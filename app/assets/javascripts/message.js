@@ -14,6 +14,7 @@ $(function() {
     .done(function(data) {
       $(".chat__message--display").append(addHTML(data));
       $("#message_body").val("");
+      form.reset();
     })
     .fail(function(data) {
       alert("エラーが発生しました")
@@ -40,6 +41,8 @@ $(function() {
       '</div>';
       return message;
     }else{
+      var addImage = '';
+    }
       message =
       '<div class = "message-display">'    +
         '<div class = "message-user">'     +
@@ -50,9 +53,9 @@ $(function() {
         '</div>'                           +
         '<div class = "message-text">'     +
           data.body                        +
+          addImage                         +
         "</div>"                           +
       "</div>";
       return message;
-    }
   }
 });
