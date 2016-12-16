@@ -24,5 +24,7 @@
       = form_for [@group, @message] do |f|
         .message-body
           = f.text_field :body, placeholder: "メッセージを入力してください", class: "message-type" 
-        %i.fa.fa-image
+          %label.chat-footer__file
+            = f.file_field :image
+            %i.fa.fa-image
         = f.submit "Send", class: "send-button" 

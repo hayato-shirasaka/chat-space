@@ -14,25 +14,38 @@ $(function() {
     .done(function(data) {
       $(".chat__message--display").append(addHTML(data));
       $("#message_body").val("");
+      form.reset();
     })
     .fail(function(data) {
-      alert("エラーが発生しました")
+      alert("エラーが発生しました");
     });
     return false
   });
+
+    $('#message_image').on('change', function(){
+      $(this).parents('#new_message').submit();
+      form.reset();
+    });
+
     function addHTML(data) {
-    message =
-      "<div class = 'message-display'>" +
-        "<div class = 'message-user'>"  +
-          data.name                     +
-        "</div>"                        +
-        "<div class = 'message-time'>"  +
-          data.created_at               +
-        "</div>"                        +
-        "<div class = 'message-text'>"  +
-          data.body                     +
-        "</div>"                        +
+    if(data.image.image.url != null){
+      var addImage = '<br><img src="' + data.image.image.url + '">';
+    }else{
+      var addImage = '';
+    }
+      message =
+      '<div class = "message-display">'    +
+        '<div class = "message-user">'     +
+          data.name                        +
+        '</div>'                           +
+        '<div class = "message-time">'     +
+          data.created_at                  +
+        '</div>'                           +
+        '<div class = "message-text">'     +
+          data.body                        +
+          addImage                         +
+        "</div>"                           +
       "</div>";
       return message;
   }
-  });
+});

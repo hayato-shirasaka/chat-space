@@ -1,6 +1,7 @@
 .chat {
   margin: 0;
   padding: 0;
+  height: 100%;
   min-width: 980px;
 
   .layout-notice{
@@ -45,6 +46,8 @@
     }
 
     .chat__groups {
+      height:calc(100% - 100px) ;
+      overflow-y: auto;
       margin: 0;
       padding: 0;
       clear: both;
@@ -79,6 +82,7 @@
   .chat-main {
     width: calc(100% - 300px);
     float: left;
+    position: relative;
     height: 100%;
 
     .chat-header {
@@ -123,11 +127,13 @@
 
     .chat__message--display {
       position: relative;
+      height:calc(100% - 190px);
       background-color: #FAFAFA;
       padding: 46px 40px 0px 40px;
       border-top: #eee;
       box-sizing: border-box;
-      overflow: scroll;
+      overflow-y: auto;
+      transform: translateZ(0);
 
       .messages {
         position: absolute;
@@ -160,6 +166,11 @@
           padding-top: 10px;
           padding-bottom: 40px;
         }
+
+        img{
+          max-height: 300px;
+          max-width: 300px;
+        }
       }
 
     .chat__message--input {
@@ -188,18 +199,33 @@
           color: black-normal;
           padding: 17px 0;
           box-sizing: border-box;
-          float: left;
           height: 50px;
-          width: 90%;
+          width: 100%;
           border: none;
         }
 
+          .chat-footer__file {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: inline-block;
+            width: 40px;
+            height: 50px;
+            line-height: 16px;
+            text-align: center;
+            cursor: pointer;
+          }
+
+
         i.fa.fa-image{
-          position: relative;
-          margin: 17px 10px 17px 0;
+          margin: 17px 17px 17px 0;
           float: right;
-          right: 50px;
+          right: 40px;
         }
+
+         #message_image {
+          display: none;
+         }
       }
 
       .send-button {
