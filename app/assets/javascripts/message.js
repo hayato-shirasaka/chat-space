@@ -4,6 +4,11 @@ $(function() {
     var form = $("#new_message").get(0);
     var formData = new FormData(form);
 
+    $("#message_image").on('change', function(){
+    $(this).parents('#new_message').submit();
+    form.reset();
+    });
+
     $.ajax(window.location.href ,{
       type: 'POST',
       dataType: 'json',
@@ -22,24 +27,8 @@ $(function() {
     return false
   });
     function addHTML(data) {
-    if(data.image.image.url !=null){
-      message =
-      '<div class = "message-display">'    +
-        '<div class = "message-user">'     +
-          data.name                        +
-        '</div>'                           +
-        '<div class = "message-time">'     +
-          data.created_at                  +
-        '</div>'                           +
-        '<div class = "message-text">'     +
-          data.body                        +
-          '<br>'                           +
-          '<img src = "'                   +
-          data.image.image.url             +
-          '">'                             +
-        '</div>'                           +
-      '</div>';
-      return message;
+    if(data.image.image.url != null){
+      var addImage = '<br><img src="' + data.image.image.url + '">';
     }else{
       var addImage = '';
     }
