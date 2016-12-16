@@ -4,11 +4,6 @@ $(function() {
     var form = $("#new_message").get(0);
     var formData = new FormData(form);
 
-    $("#message_image").on('change', function(){
-    $(this).parents('#new_message').submit();
-    form.reset();
-    });
-
     $.ajax(window.location.href ,{
       type: 'POST',
       dataType: 'json',
@@ -22,10 +17,16 @@ $(function() {
       form.reset();
     })
     .fail(function(data) {
-      alert("エラーが発生しました")
+      alert("エラーが発生しました");
     });
     return false
   });
+
+    $('#message_image').on('change', function(){
+      $(this).parents('#new_message').submit();
+      form.reset();
+    });
+
     function addHTML(data) {
     if(data.image.image.url != null){
       var addImage = '<br><img src="' + data.image.image.url + '">';
