@@ -61,5 +61,4 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
 gem 'dotenv-rails'
-gem "config"
 
