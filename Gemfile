@@ -59,4 +59,7 @@ gem 'pry-rails'
 gem 'rails-i18n'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog'
+gem 'dotenv-rails'
+gem "config"
 
