@@ -16,7 +16,6 @@ $(function() {
     });
   };
 
-
   $("#new_message").on('submit', function(e) {
     e.preventDefault();
     var form = $("#new_message").get(0);
@@ -51,7 +50,6 @@ $(function() {
   };
 
   setInterval(autoUpdate, timer)
-
 
   function addHTML(data) {
   if(data.image.image.url != null){
