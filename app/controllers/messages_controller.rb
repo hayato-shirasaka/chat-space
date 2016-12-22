@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @groups = current_user.groups
+    @messages = Message.all.includes(:user)
   end
 
   def create
@@ -12,7 +13,7 @@ class MessagesController < ApplicationController
     if @message.save
       respond_to do |format|
         format.html { redirect_to group_messages_path}
-        format.json
+        format.json 
       end
     else
       redirect_to group_messages_path, alert: "メッセージを入力してください"
