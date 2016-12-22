@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
     if @message.save
       respond_to do |format|
         format.html { redirect_to group_messages_path}
-        format.json 
+        format.json
       end
     else
       redirect_to group_messages_path, alert: "メッセージを入力してください"
