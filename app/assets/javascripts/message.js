@@ -38,9 +38,6 @@ $(function() {
           $(".chat__message--display").append(addHTML(data[i]));
         }
       })
-      .fail(function(data) {
-        console.log("error");
-      })
     };
 
     setInterval(autoUpdate, 5000)
