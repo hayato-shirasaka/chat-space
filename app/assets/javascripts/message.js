@@ -27,6 +27,25 @@ $(function() {
       form.reset();
     });
 
+    function autoUpdate() {
+      $.ajax(window.location.href, {
+        type: 'GET',
+        dataType: 'json',
+      })
+      .done(function(data) {
+        $(".chat__message--display").empty();
+        for(var i = 0; i < data.length; i++) {
+          $(".chat__message--display").append(addHTML(data[i]));
+        }
+      })
+      .fail(function(data) {
+        console.log("error");
+      })
+    };
+
+    setInterval(autoUpdate, 5000)
+
+
     function addHTML(data) {
     if(data.image.image.url != null){
       var addImage = '<br><img src="' + data.image.image.url + '">';
