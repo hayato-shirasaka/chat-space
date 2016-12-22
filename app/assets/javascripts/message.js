@@ -1,4 +1,6 @@
 $(function() {
+  var body = $(".chat__message--display")
+
   $("#new_message").on('submit', function(e) {
     e.preventDefault();
     var form = $("#new_message").get(0);
@@ -12,7 +14,7 @@ $(function() {
       contentType: false,
     })
     .done(function(data) {
-      $(".chat__message--display").append(addHTML(data));
+      body.append(addHTML(data));
       $("#message_body").val("");
       form.reset();
       scrollToBottom();
@@ -34,16 +36,15 @@ $(function() {
         dataType: 'json',
       })
       .done(function(data) {
-        $(".chat__message--display").empty();
+        body.empty();
         for(var i = 0; i < data.length; i++) {
-          $(".chat__message--display").append(addHTML(data[i]));
+          body.append(addHTML(data[i]));
         }
         scrollToBottom();
       });
     };
 
     function scrollToBottom() {
-      var body = $(".chat__message--display")
       body.animate({ scrollTop: body[0].scrollHeight}, 'normal')
     };
 
