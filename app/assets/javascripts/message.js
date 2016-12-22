@@ -1,5 +1,6 @@
 $(function() {
   var body = $(".chat__message--display")
+  var timer = 5 * 1000
 
   $("#new_message").on('submit', function(e) {
     e.preventDefault();
@@ -48,7 +49,7 @@ $(function() {
       body.animate({ scrollTop: body[0].scrollHeight}, 'normal')
     };
 
-    setInterval(autoUpdate, 5000)
+    setInterval(autoUpdate, timer)
 
 
     function addHTML(data) {
