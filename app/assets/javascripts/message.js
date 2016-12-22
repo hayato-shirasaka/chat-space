@@ -12,7 +12,7 @@ $(function() {
       for(var i = 0; i < data.length; i++) {
         body.append(addHTML(data[i]));
       }
-      scrollToBottom();
+      // scrollToBottom();
     });
   };
 
