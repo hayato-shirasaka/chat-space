@@ -2,6 +2,21 @@ $(function() {
   var body = $(".chat__message--display")
   var timer = 5 * 1000
 
+  function autoUpdate() {
+    $.ajax(window.location.href, {
+      type: 'GET',
+      dataType: 'json',
+    })
+    .done(function(data) {
+      body.empty();
+      for(var i = 0; i < data.length; i++) {
+        body.append(addHTML(data[i]));
+      }
+      scrollToBottom();
+    });
+  };
+
+
   $("#new_message").on('submit', function(e) {
     e.preventDefault();
     var form = $("#new_message").get(0);
@@ -26,51 +41,37 @@ $(function() {
     return false
   });
 
-    $('#message_image').on('change', function(){
-      $(this).parents('#new_message').submit();
-      form.reset();
-    });
+  $('#message_image').on('change', function(){
+    $(this).parents('#new_message').submit();
+    form.reset();
+  });
 
-    function autoUpdate() {
-      $.ajax(window.location.href, {
-        type: 'GET',
-        dataType: 'json',
-      })
-      .done(function(data) {
-        body.empty();
-        for(var i = 0; i < data.length; i++) {
-          body.append(addHTML(data[i]));
-        }
-        scrollToBottom();
-      });
-    };
+  function scrollToBottom() {
+    body.animate({ scrollTop: body[0].scrollHeight}, 'normal')
+  };
 
-    function scrollToBottom() {
-      body.animate({ scrollTop: body[0].scrollHeight}, 'normal')
-    };
-
-    setInterval(autoUpdate, timer)
+  setInterval(autoUpdate, timer)
 
 
-    function addHTML(data) {
-    if(data.image.image.url != null){
-      var addImage = '<br><img src="' + data.image.image.url + '">';
-    }else{
-      var addImage = '';
-    }
-      message =
-      '<div class = "message-display">'    +
-        '<div class = "message-user">'     +
-          data.name                        +
-        '</div>'                           +
-        '<div class = "message-time">'     +
-          data.created_at                  +
-        '</div>'                           +
-        '<div class = "message-text">'     +
-          data.body                        +
-          addImage                         +
-        "</div>"                           +
-      "</div>";
-      return message;
+  function addHTML(data) {
+  if(data.image.image.url != null){
+    var addImage = '<br><img src="' + data.image.image.url + '">';
+  }else{
+    var addImage = '';
+  }
+    message =
+    '<div class = "message-display">'    +
+      '<div class = "message-user">'     +
+        data.name                        +
+      '</div>'                           +
+      '<div class = "message-time">'     +
+        data.created_at                  +
+      '</div>'                           +
+      '<div class = "message-text">'     +
+        data.body                        +
+        addImage                         +
+      "</div>"                           +
+    "</div>";
+    return message;
   }
 });
