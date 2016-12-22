@@ -38,12 +38,13 @@ $(function() {
         for(var i = 0; i < data.length; i++) {
           $(".chat__message--display").append(addHTML(data[i]));
         }
-          scrollToBottom();
+        scrollToBottom();
       });
     };
 
     function scrollToBottom() {
-      $(".chat__message--display").animate({ scrollTop: $(".chat__message--display")[0].scrollHeight}, 'normal')
+      var body = $(".chat__message--display")
+      body.animate({ scrollTop: body[0].scrollHeight}, 'normal')
     };
 
     setInterval(autoUpdate, 5000)
