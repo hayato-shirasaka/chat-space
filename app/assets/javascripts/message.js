@@ -12,7 +12,7 @@ $(function() {
       for(var i = 0; i < data.length; i++) {
         body.append(addHTML(data[i]));
       }
-      scrollToBottom();
+      // scrollToBottom();
     });
   };
 
@@ -49,7 +49,7 @@ $(function() {
     body.animate({ scrollTop: body[0].scrollHeight}, 'normal')
   };
 
-  setInterval(autoUpdate, timer)
+  // setInterval(autoUpdate, timer)
 
   function addHTML(data) {
   if(data.image.image.url != null){
