@@ -2,7 +2,7 @@
 
 class ImageUploader < CarrierWave::Uploader::Base  
 
-  storage :fog
+  storage :file
 
  # リサイズしたり画像形式を変更するのに必要
   include CarrierWave::RMagick
