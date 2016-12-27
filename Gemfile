@@ -37,6 +37,10 @@ group :development, :test do
   gem 'factory_girl_rails', "~> 4.4.1"
   gem 'faker'
   gem 'rails-controller-testing'
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
 end
 
 group :development do
@@ -48,7 +52,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :production do
+group :production, :staging do
     gem 'unicorn'
 end
 
